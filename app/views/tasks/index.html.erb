@@ -1,0 +1,9 @@
+<h1>トップ</h1>
+<%= calendar @tasks_by_date do |date, tasks| %>
+  <%= date %>
+  <% tasks.each do |task| %>
+    <div>
+      <%= link_to task.name, task_path(task) %>
+    </div>
+  <% end %>
+<% end %>
