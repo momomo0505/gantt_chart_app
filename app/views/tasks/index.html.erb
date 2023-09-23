@@ -1,0 +1,11 @@
+<h1>予定表</h1>
+
+<%= link_to '予定の追加', new_task_path %>
+
+<%= month_calendar do |date| %>
+  <%= date.day %>
+  
+<% @tasks_by_date[date].each do |task| %>
+  <%= link_to task.name, task_path(task) %>
+<% end %>
+<% end %>
