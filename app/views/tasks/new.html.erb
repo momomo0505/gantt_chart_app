@@ -1,0 +1,33 @@
+
+<h1>テスト</h1>
+
+<%= form_with(model: @task, local: true) do |form| %>
+
+  <div class="memo">
+    <%= form.label :件名 %>
+    <%= form.text_field :name %>
+  </div>
+
+    <div class="start_date">
+    <%= form.label :開始 %>
+    <%= form.datetime_select :start_date %>
+  </div>
+
+  <div class="end_date">
+    <%= form.label :終了 %>
+   <%= form.datetime_select :end_date %>
+  </div>
+
+  <div class="memo">
+    <%= form.label :メモ %>
+    <%= form.text_field :memo %>
+  </div>
+
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+<%= link_to '戻る', root_path %>
