@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'simple_calendar' 
 gem 'bootstrap', '~> 4.3.1' 
+
+gem 'rails-i18n'
