@@ -57,3 +57,7 @@ gem 'simple_calendar'
 gem 'bootstrap', '~> 4.3.1' 
 
 gem 'rails-i18n'
+
+group :production do
+  gem 'pg'
+end
