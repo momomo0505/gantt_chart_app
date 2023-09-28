@@ -1,6 +1,6 @@
 <div class="wrapper">
 <div class="head">
-<div class="head_title">予定の追加</div>
+<%= link_to '予定の追加', new_task_path, class: 'head_title' %>
 <div class="head_rl">
 <div class="head_left">
 <%= link_to '戻る', root_path, class: 'link' %>
@@ -8,6 +8,7 @@
 <div class="head_right">
 </div>
 </div>
+
 
 <% if @task.errors.any? %>
   <div id="error_explanation">
