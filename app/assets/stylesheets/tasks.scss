@@ -1,3 +1,7 @@
+.main {
+  background-color: #fafafa;
+}
+
 .prev-month a {
   display: none;
 }
@@ -6,26 +10,86 @@
   display: none;
 }
 
+.item-column, .calendar-heading-left {
+  background-color: #DDDDDD;
+}
+
+.item-column {
+  background-color: #DDDDDD;
+  width: 150px;
+}
+
+
 .taskname {
   font-size: 13px;
-  display: block; /* ブロックレベル要素として表示 */
-  width: 100px;    /* 幅を30pxに設定 */
-  white-space: nowrap; /* 文字列を折り返さないように設定 */
-  overflow: hidden;    /* オーバーフローした内容を非表示にする */
-  text-overflow: ellipsis; /* オーバーフローしたテキストを省略記号（...）で表現 */
+  display: block;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .calendar-heading {
   text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
-.head {
+
+
+.wrapper {
+  display: flex;
+}
+
+.head_rl {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
 }
 
+.head_left {
+  margin-left: 15px;
+}
+
+.head_right {
+  margin-right: 15px;
+}
+
+.head {
+  background-color: #253141;
+  width: 100%;
+  height: 10vh;
+}
+
+.head_title {
+  font-size: 25px;
+  color: white;
+  margin: 10px 0px 0px 10px;
+  text-shadow: rgb(7, 7, 7) 1px 0 10px;
+}
+
+.link {
+  color: rgb(246, 246, 246);
+}
+
+.link:visited {
+  color: white;
+}
+
+.link:hover {
+  color: white; /* 必要に応じて、hover時の色を変更できます。 */
+}
+
 .sub {
 width: 10px;
+}
+
+.task {
+  background-color: rgb(156, 156, 255); 
+}
+
+.custom-td {
+  background-color: #fafafa;
 }
 
 .task {

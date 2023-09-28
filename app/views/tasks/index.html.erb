@@ -1,13 +1,17 @@
-<h2>予定表</h2>
-
+<div class="wrapper">
 <div class="head">
+<div class="head_title">予定表</div>
+<div class="head_rl">
+
 <div class="head_left">
-<%= link_to '予定の追加', new_task_path %>
+<%= link_to '予定の追加', new_task_path, class: 'link' %>
 </div>
 
 <div class="head_right">
-<%= link_to '月間表示', tasks_path(view: 'month') %>
-<%= link_to 'ガントチャート表示', tasks_path(view: 'week') %>
+<%= link_to '月間表示', tasks_path(view: 'month'), class: 'link' %>
+<%= link_to 'ガントチャート表示', tasks_path(view: 'week'), class: 'link' %>
+</div>
+</div>
 </div>
 </div>
 
