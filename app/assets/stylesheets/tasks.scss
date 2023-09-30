@@ -6,6 +6,12 @@
   background-color: #fafafa;
 }
 
+.gantt-chart {
+  overflow: auto;
+  width: 100%;
+  margin-bottom: 800px;
+}
+
 .prev-month a {
   display: none;
 }
@@ -61,7 +67,7 @@
 .head {
   background-color: #253141;
   width: 100%;
-  height: 10vh;
+  height: 30%;
   padding:10px 10px 0px 10px;
 }
 
@@ -97,14 +103,95 @@ width: 10px;
   background-color: #fafafa;
 }
 
-.task {
-  background-color: rgb(156, 156, 255); 
+.even-row .custom-td {
+  background-color: #ffffff;
 }
 
 .today {
   background-color: rgb(255, 255, 161);
 }
 
+.forms {
+  width: 80vw; /* ビューポートの幅に対する相対的なサイズ */
+  font-size: 1.0em; /* フォントサイズの拡大 */
+}
 
+/* 各要素のサイズを調整 */
+.memo-field,  .start_date select, .end_date select {
+  width: 8%; /* コンテナの80%の幅 */
+  height: 25px; /* 高さの調整 */
+  margin-bottom: 10px; /* 下側の間隔 */
+}
 
+.name input {
+  width: 25%; 
+  height: 25px;
+  margin-bottom: 10px;
+}
 
+.memo-field {
+  width: 25%; 
+  height: 50px;
+}
+
+.submit input {
+  cursor: pointer; /* submitボタンのカーソル変更 */
+  width: 10%; /* コンテナの80%の幅 */
+  height: 25px;
+  margin-left: 3.4%;
+}
+
+   /* スマホ表示時 */
+
+    @media (max-width: 599px) {
+   .gantt-chart table {
+    width: 200%; /* テーブル全体の幅を100%にする */
+   }
+
+   .gantt-chart th, .gantt-chart td {
+    width: 3%; /* 各セルの幅を3%にする */
+    overflow: hidden; /* コンテンツがセルに収まらない場合、非表示にする */
+    text-overflow: ellipsis; /* コンテンツがセルに収まらない場合、...で省略する */
+    white-space: nowrap; /* 改行を無視する */
+   }
+
+   .gantt-chart th {
+    font-size: 3px;
+   }
+
+   .taskname {
+    font-size: 5px; /* タスク名のフォントサイズを小さくする */
+   }
+
+   .forms {
+      padding-left: 6%;
+      width: 100vw; /* ビューポートの幅に対する相対的なサイズ */
+      margin: auto; /* 中央揃え */
+      font-size: 1.0em; /* フォントサイズの拡大 */
+    }
+  
+    .memo-field,  .start_date select, .end_date select {
+      width: 15%; /* コンテナの80%の幅 */
+      height: 25px; /* 高さの調整 */
+      margin-bottom: 10px; /* 下側の間隔 */
+    }
+
+    .name input {
+      width: 50%; 
+      height: 25px;
+      margin-bottom: 10px;
+    }
+    
+    .memo-field {
+      width: 50%; 
+      height: 50px;
+    }
+    
+    .submit input {
+      cursor: pointer; /* submitボタンのカーソル変更 */
+      width: 30%; /* コンテナの80%の幅 */
+      height: 25px;
+      margin-left: 10%;
+    }
+
+  }
