@@ -1,28 +1,31 @@
+<div class="forms">
 <%= form_with(model: @task, local: true) do |form| %>
 <br>
-  <div class="memo">
+  <div class="name">
     <%= form.label :件名 %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "name-input" %>
   </div>
 
     <div class="start_date">
     <%= form.label :開始 %>
-    <%= form.date_select :start_date %>
+    <%= form.date_select :start_date, class: "start-date-select" %>
   </div>
 
   <div class="end_date">
     <%= form.label :終了 %>
-   <%= form.date_select :end_date %>
+   <%= form.date_select :end_date, class: "end-date-select" %>
   </div>
 
   <div class="memo">
-    <%= form.label :メモ %>
-    <%= form.text_field :memo %>
-  </div>
+  <%= form.label :メモ %>
+  <%= form.text_field :memo, class: "memo-field" %>
+</div>
 
+<br>
 
   <div class="submit">
-    <%= form.submit %>
+    <%= form.submit class: "submit-input" %>
   </div>
 
 <% end %>
+</div>
