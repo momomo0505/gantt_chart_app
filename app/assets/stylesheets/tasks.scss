@@ -33,12 +33,7 @@
   max-width: 10%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  position: sticky;
-  top: 0;
-  left: 0;
-  background-color: #DDDDDD;
-  z-index: 10; 
+  white-space: nowrap; 
 }
 
 .taskname {
@@ -50,10 +45,12 @@
   overflow: hidden; 
   text-overflow: ellipsis; 
   white-space: nowrap; 
-  position: sticky; 
-  top: 0;
+}
+
+.sticky-cell {
+  position: sticky;
   left: 0;
-  background-color: #f3f3f3;
+  
   z-index: 10;
 }
 
