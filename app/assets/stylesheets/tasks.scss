@@ -4,6 +4,8 @@
 
 .main {
   background-color: #fafafa;
+  width: 85%;
+  margin: auto;
 }
 
 .gantt-chart {
@@ -32,18 +34,28 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #DDDDDD;
+  z-index: 10; 
 }
 
 
 .taskname {
-  width: 100% !important;
-  font-size: 15px;
+  width: 100%;
+  font-size: 13px;
   display: block;
   min-width: 100%;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  position: sticky; 
+  top: 0;
+  left: 0;
+  background-color: #f3f3f3;
+  z-index: 10;
 }
 
 .calendar-heading {
@@ -153,6 +165,10 @@ width: 10px;
     @media (max-width: 599px) {
    .gantt-chart table {
     width: 200%; /* テーブル全体の幅を100%にする */
+   }
+
+   .main {
+    width: 100%;
    }
 
    .gantt-chart th, .gantt-chart td {
