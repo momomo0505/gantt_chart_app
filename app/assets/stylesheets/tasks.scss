@@ -25,18 +25,25 @@
 }
 
 .item-column {
+  width: 8% !important;
   background-color: #DDDDDD;
-  width: 150px;
+  min-width: 10%;
+  max-width: 10%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
 .taskname {
-  font-size: 13px;
+  width: 100% !important;
+  font-size: 15px;
   display: block;
-  width: 150px;
-  white-space: nowrap;
+  min-width: 100%;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .calendar-heading {
@@ -149,7 +156,7 @@ width: 10px;
    }
 
    .gantt-chart th, .gantt-chart td {
-    width: 3%; /* 各セルの幅を3%にする */
+    width: 2%; /* 各セルの幅を3%にする */
     overflow: hidden; /* コンテンツがセルに収まらない場合、非表示にする */
     text-overflow: ellipsis; /* コンテンツがセルに収まらない場合、...で省略する */
     white-space: nowrap; /* 改行を無視する */
