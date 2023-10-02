@@ -1,7 +1,7 @@
 <div class="wrapper">
 <div class="head">
 
-<%= link_to '予定表', root_path, class: 'head_title' %>
+<%= link_to 'カレンダー', root_path, class: 'head_title' %>
 <div class="head_rl">
 
 <div class="head_left">
@@ -9,8 +9,8 @@
 </div>
 
 <div class="head_right">
-<%= link_to '月間', tasks_path(view: 'month'), class: 'link' %>
-<%= link_to 'ガント', tasks_path(view: 'week'), class: 'link' %>
+<%= link_to '月表示', tasks_path(view: 'month'), class: 'link' %>
+<%= link_to '横表示', tasks_path(view: 'week'), class: 'link' %>
 </div>
 </div>
 </div>

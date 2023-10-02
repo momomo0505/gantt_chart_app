@@ -9,6 +9,7 @@
 </div>
 </div>
 </div>
+</div>
 
 
 <% if @task.errors.any? %>
@@ -24,16 +25,17 @@
 <% end %>
 </div>
 
+
 <div class="forms">
 
 <%= form_with(model: @task, local: true) do |form| %>
 
 
 <br>
-  <div class="name">
-    <%= form.label :件名 %>
-    <%= form.text_field :name, class: "name-input" %>
-  </div>
+    <div class="name name-wrapper">
+     <%= form.label :件名 %>
+     <%= form.text_field :name, class: "name-input" %>
+    </div>
 
     <div class="start_date">
     <%= form.label :開始 %>

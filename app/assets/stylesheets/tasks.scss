@@ -1,4 +1,4 @@
-.link, .link2, .taskname {
+.link, .link2 {
   text-decoration: none;
 }
 
@@ -45,6 +45,8 @@
   overflow: hidden; 
   text-overflow: ellipsis; 
   white-space: nowrap; 
+  color: #202020;
+  text-decoration: none;
 }
 
 .sticky-cell {
@@ -123,11 +125,11 @@ width: 10px;
 }
 
 .today {
-  background-color: rgb(255, 255, 161);
+  background-color: rgb(255, 255, 183);
 }
 
 .forms {
-  width: 80vw; /* ビューポートの幅に対する相対的なサイズ */
+  width: 80%; /* ビューポートの幅に対する相対的なサイズ */
   font-size: 1.0em; /* フォントサイズの拡大 */
 }
 
@@ -155,6 +157,17 @@ width: 10px;
   height: 25px;
   margin-left: 3.4%;
 }
+
+.name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* ラベルと入力フォームの間の隙間 */
+}
+
+.field_with_errors {
+  width: 80%;
+}
+
 
    /* スマホ表示時 */
 
