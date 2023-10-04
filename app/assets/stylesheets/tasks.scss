@@ -1,3 +1,4 @@
+
 .link, .link2 {
   text-decoration: none;
 }
@@ -168,6 +169,65 @@ width: 10px;
   width: 80%;
 }
 
+
+.blockname {
+  max-width: 4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 100%;  /* tooltip全体の幅を100%に設定 */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;  /* 必要に応じて調整 */
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;  
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  /* その他のスタイル（背景色、境界線など） */
+}
+
+.taskname.blockname {
+  display: inline-block;
+  padding: 5px 10px; /* このパディングを調整して、クリックできる領域を増やす */
+  background-color: rgb(156, 156, 255); /* 青色の背景を直接リンクに適用 */
+}
+
+.block-link {
+  display: block;
+  width: 100%;
+  height: auto;  /* 高さを自動に設定 */
+  min-height: 20px; /* 高さの最小値を設定（調整が必要な場合は適宜変更） */
+  background-color: rgba(156, 156, 255, 0.7); /* 背景色を少し透明に設定 */
+  font-size: 3px;
+  text-decoration: none;
+  color: #202020;
+}
+
+.block-link:hover {
+  background-color: rgba(156, 156, 255, 0.9); /* ホバー時の背景色を濃くする */
+}
 
    /* スマホ表示時 */
 

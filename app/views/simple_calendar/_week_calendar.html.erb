@@ -23,17 +23,23 @@
     </tr>
 </thead>
 
-    <tbody>
+     <tbody>
         <% @tasks.each_with_index do |task, index| %>
-    <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
-    <td class="sticky-cell">
-        <%= link_to task.name, task_path(task), class: "taskname" %></td>
-        <% (0..30).each do |wday| %>
-          <td class="<%= 'task' if task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'custom-td' unless task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %>"></td>
-        <% end %>
-    </tr>
+          <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
+            <td class="sticky-cell">
+              <%= link_to task.name, task_path(task), class: "taskname" %> <!-- ここでtasknameをリンクとして表示 -->
+            </td>
+            <% (0..30).each do |wday| %>
+  <td class="<%= 'task' if task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'custom-td' unless task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %>">
+    <% day = @start_date + wday.days %>
+    <% if task.start_date == day %>
+      <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> <!-- blocknameをリンクテキストとして表示 -->
+    <% end %>
+  </td>
 <% end %>
-    </tbody>
-</table>
-</div>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

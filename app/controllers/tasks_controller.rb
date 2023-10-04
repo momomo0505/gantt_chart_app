@@ -18,14 +18,14 @@ class TasksController < ApplicationController
       @task = Task.new
     end
 
-  def create
-    @task = Task.create(task_params)
-    if @task.save
-      redirect_to root_path
-    else
-      render :new
+    def create
+      @task = Task.new(task_params)
+      if @task.save
+        redirect_to root_path
+      else
+        render :new
+      end
     end
-  end
 
   def show
     @task = Task.find(params[:id])
@@ -61,10 +61,27 @@ class TasksController < ApplicationController
   end
 
 
+  def edit_blockname
+    @task = Task.find(params[:id])
+  end
+  
+  def update_blockname
+    @task = Task.find(params[:id])
+    if @task.update(blockname_params)
+      redirect_to root_path
+    else
+      render :edit_blockname
+    end
+  end
+
   private
 
   def task_params
     params.require(:task).permit(:name, :start_date, :end_date, :memo)
+  end
+
+  def blockname_params
+    params.require(:task).permit(:blockname)
   end
 
 end
