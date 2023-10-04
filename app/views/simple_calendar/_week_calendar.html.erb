@@ -33,7 +33,10 @@
   <td class="<%= 'task' if task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'custom-td' unless task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %>">
     <% day = @start_date + wday.days %>
     <% if task.start_date == day %>
-      <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> <!-- blocknameをリンクテキストとして表示 -->
+  <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> 
+  <%= link_to task.blockname2 || '', edit_blockname_task_path(task), class: "block-link" %>
+  <%= link_to task.blockname3 || '', edit_blockname_task_path(task), class: "block-link" %>
+      
     <% end %>
   </td>
 <% end %>

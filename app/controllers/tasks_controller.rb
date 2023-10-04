@@ -81,7 +81,7 @@ class TasksController < ApplicationController
   end
 
   def blockname_params
-    params.require(:task).permit(:blockname)
+    params.require(:task).permit(:blockname, :blockname2, :blockname3)
   end
 
 end

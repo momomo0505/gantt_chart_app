@@ -1,7 +1,20 @@
+<%= link_to '戻る', root_path, class: '' %>
+
+
 <%= form_with(model: @task, url: update_blockname_task_path(@task), local: true, method: :patch) do |form| %>
   <div class="name">
-    <%= form.label :blockname, "ブロック名" %>
-    <%= form.text_field :blockname, class: "blockname-input", maxlength: 10 %>
+    <%= form.label :blockname, "ブロック名1(最大50文字)" %>
+    <%= form.text_field :blockname, class: "blockname-input", maxlength: 50 %>
+  </div>
+  
+  <div class="name">
+    <%= form.label :blockname2, "ブロック名2(最大50文字)" %>
+    <%= form.text_field :blockname2, class: "blockname-input", maxlength: 50 %>
+  </div>
+
+  <div class="name">
+    <%= form.label :blockname3, "ブロック名3(最大50文字)" %>
+    <%= form.text_field :blockname3, class: "blockname-input", maxlength: 50 %>
   </div>
 
   <div class="submit">
