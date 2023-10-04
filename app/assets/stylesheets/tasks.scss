@@ -212,7 +212,6 @@ width: 10px;
 
    .gantt-chart th, .gantt-chart td {
     width: 2%; /* 各セルの幅を3%にする */
-    
     text-overflow: ellipsis; /* コンテンツがセルに収まらない場合、...で省略する */
     white-space: nowrap; /* 改行を無視する */
    }
@@ -223,7 +222,6 @@ width: 10px;
 
    .taskname {
     font-size: 6px; /* タスク名のフォントサイズを小さくする */
-    min-height: 15px;
    }
 
    .forms {
@@ -257,9 +255,6 @@ width: 10px;
       margin-left: 10%;
     }
 
-    .block-link {
-      max-height: 15px;
-      min-height: 15px; /* 高さの最小値を設定（調整が必要な場合は適宜変更） */
-    }
+ 
 
   }
