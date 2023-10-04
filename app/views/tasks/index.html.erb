@@ -1,7 +1,7 @@
 <div class="wrapper">
 <div class="head">
 
-<%= link_to 'カレンダー', root_path, class: 'head_title' %>
+<%= link_to '予定表', root_path, class: 'head_title' %>
 <div class="head_rl">
 
 <div class="head_left">
@@ -9,8 +9,8 @@
 </div>
 
 <div class="head_right">
-<%= link_to '月表示', tasks_path(view: 'month'), class: 'link' %>
-<%= link_to '横表示', tasks_path(view: 'week'), class: 'link' %>
+<%= link_to 'カレンダー', tasks_path(view: 'month'), class: 'link' %>
+<%= link_to 'ガント', tasks_path(view: 'week'), class: 'link' %>
 </div>
 </div>
 </div>
@@ -20,9 +20,12 @@
   <%= week_calendar do |date| %>
     <%= date.day %>
     <% @tasks_by_date[date].each do |task| %>
-      <%= link_to task.name, task_path(task), class: "taskname" %>
-    <% end %>
-  <% end %>
+  <div class="tooltips">
+    <%= link_to task.name, task_path(task), class: "taskname blockname" %>
+    <span class="tooltiptext"><%= task.blockname %></span>
+  </div>
+<% end %>
+ <% end %>
 <% else %>
   <%= month_calendar do |date| %>
     <%= date.day %>
@@ -31,3 +34,5 @@
     <% end %>
   <% end %>
 <% end %>
+
+

@@ -1,0 +1,10 @@
+<%= form_with(model: @task, url: update_blockname_task_path(@task), local: true, method: :patch) do |form| %>
+  <div class="name">
+    <%= form.label :blockname, "ブロック名" %>
+    <%= form.text_field :blockname, class: "blockname-input", maxlength: 10 %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit "更新" %>
+  </div>
+<% end %>
