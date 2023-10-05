@@ -2,7 +2,7 @@
 <%= form_with(model: @task, local: true) do |form| %>
 <br>
   <div class="name">
-    <%= form.label :件名 %>
+    <%= form.label :"件名 (最大16文字)" %>
     <%= form.text_field :name, class: "name-input" %>
   </div>
 

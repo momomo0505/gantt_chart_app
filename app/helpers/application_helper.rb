@@ -1,7 +1,7 @@
 module ApplicationHelper
   def truncate_name(name)
-    if name.length > 7
-      name[0..6] + "\n" + name[7..-1]
+    if name.length > 8
+      name[0..7] + "\n" + name[8..-1]
     else
       name
     end
