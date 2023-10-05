@@ -1,3 +1,7 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
 .link, .link2 {
   text-decoration: none;
@@ -39,7 +43,7 @@
 
 .taskname {
   width: 100%;
-  font-size: 13px;
+  font-size: 11px;
   display: block;
   min-width: 100%;
   max-width: 100%;
@@ -49,6 +53,7 @@
   color: #202020;
   text-decoration: none;
   min-height: 38px;
+  white-space: normal; //7文字以上の場合は改行（helperメソッドあり）
 }
 
 .sticky-cell {
@@ -110,7 +115,7 @@
 }
 
 .sub {
-width: 10px;
+  width: 10px;
 }
 
 .task {
@@ -202,6 +207,7 @@ width: 10px;
    /* スマホ表示時 */
 
     @media (max-width: 599px) {
+
    .gantt-chart table {
     width: 200%; /* テーブル全体の幅を100%にする */
    }
@@ -221,7 +227,7 @@ width: 10px;
    }
 
    .taskname {
-    font-size: 6px; /* タスク名のフォントサイズを小さくする */
+    font-size: 8px; /* タスク名のフォントサイズを小さくする */
    }
 
    .forms {
@@ -255,6 +261,8 @@ width: 10px;
       margin-left: 10%;
     }
 
- 
+    .even-row , .odd-row {
+      height: 25px;
+    }
 
   }

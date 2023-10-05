@@ -27,7 +27,7 @@
         <% @tasks.each_with_index do |task, index| %>
           <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
             <td class="sticky-cell">
-              <%= link_to task.name, task_path(task), class: "taskname" %> <!-- ここでtasknameをリンクとして表示 -->
+             <%= link_to truncate_name(task.name), task_path(task), class: "taskname" %> <!-- ここでtasknameをリンクとして表示 -->
             </td>
             <% (0..30).each do |wday| %>
   <td class="<%= 'task' if task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'custom-td' unless task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %>">
