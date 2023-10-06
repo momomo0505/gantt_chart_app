@@ -30,15 +30,14 @@
              <%= link_to truncate_name(task.name), task_path(task), class: "taskname" %> <!-- ここでtasknameをリンクとして表示 -->
             </td>
             <% (0..30).each do |wday| %>
-  <td class="<%= 'task' if task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'custom-td' unless task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %>">
+  <td class="<%= 'task' if task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'custom-td' unless task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'three-blocknames' if [task.blockname, task.blockname2, task.blockname3].compact.size == 3 %>">
     <% day = @start_date + wday.days %>
     <% if task.start_date == day %>
-  <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> 
-  <%= link_to task.blockname2 || '', edit_blockname_task_path(task), class: "block-link" %>
-  <%= link_to task.blockname3 || '', edit_blockname_task_path(task), class: "block-link" %>
-      
+        <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> 
+        <%= link_to task.blockname2 || '', edit_blockname_task_path(task), class: "block-link" %>
+        <%= link_to task.blockname3 || '', edit_blockname_task_path(task), class: "block-link" %>
     <% end %>
-  </td>
+</td>
 <% end %>
           </tr>
         <% end %>

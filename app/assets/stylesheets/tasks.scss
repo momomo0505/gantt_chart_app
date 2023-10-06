@@ -208,6 +208,10 @@ body, html {
 
     @media (max-width: 599px) {
 
+    .head_title {
+      font-size: 20px;
+    }
+
    .gantt-chart table {
     width: 200%; /* テーブル全体の幅を100%にする */
    }
@@ -263,7 +267,16 @@ body, html {
 
   
     .block-link {
-      height: 8px;
+      height: 8px; /* こちらの高さを調整して適切な大きさにします */
+      line-height: 8px; /* 行の高さも上記と同じに設定します */
+      padding: 0; /* 上下のパディングを削除して、テキストがブロックの端まで達するようにします */
     }
+    .three-blocknames {
+      height: 24px; /* 8px x 3 = 24px */
+  }
+
+  .head_right {
+    font-size: 13px;
+  }
 
   }
