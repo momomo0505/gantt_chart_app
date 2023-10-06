@@ -52,6 +52,7 @@ body, html {
   color: #202020;
   text-decoration: none;
   min-height: 30px;
+  max-height: 30px;
   white-space: normal; //7文字以上の場合は改行（helperメソッドあり）
 }
 
