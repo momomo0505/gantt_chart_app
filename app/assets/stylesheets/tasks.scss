@@ -52,7 +52,7 @@ body, html {
   white-space: nowrap; 
   color: #202020;
   text-decoration: none;
-  min-height: 38px;
+  min-height: 28px;
   white-space: normal; //7文字以上の場合は改行（helperメソッドあり）
 }
 
@@ -182,7 +182,7 @@ body, html {
 
 .taskname.blockname {
   display: inline-block;
-  padding: 5px 10px; /* このパディングを調整して、クリックできる領域を増やす */
+  
   background-color: rgb(156, 156, 255); /* 青色の背景を直接リンクに適用 */
 }
 
