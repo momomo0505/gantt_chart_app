@@ -192,7 +192,7 @@ body, html {
   text-overflow: clip; /* 省略記号(...)の代わりにクリップする */
   display: block;
   width: 100%;
-  height: auto;  /* 高さを自動に設定 */
+  height: 12px;  /* 高さを自動に設定 */
   min-height: 5px; /* 高さの最小値を設定（調整が必要な場合は適宜変更） */
   background-color: rgba(156, 156, 255, 0.7); /* 背景色を少し透明に設定 */
   font-size: 5px;
@@ -227,7 +227,7 @@ body, html {
    }
 
    .taskname {
-    font-size: 10px; /* タスク名のフォントサイズを小さくする */
+    font-size: 9px; /* タスク名のフォントサイズを小さくする */
    }
 
    .forms {
@@ -261,8 +261,6 @@ body, html {
       margin-left: 10%;
     }
 
-    .even-row , .odd-row {
-      height: 10px;
-    }
+ 
 
   }
