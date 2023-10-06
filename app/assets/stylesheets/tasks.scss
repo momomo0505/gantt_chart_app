@@ -181,7 +181,6 @@ body, html {
 
 .taskname.blockname {
   display: inline-block;
-  
   background-color: rgb(156, 156, 255); /* 青色の背景を直接リンクに適用 */
 }
 
@@ -281,4 +280,8 @@ body, html {
      font-size: 13px;
    }
 
+   .block-link {
+   font-size: 7px;
+   }
+ 
   }
