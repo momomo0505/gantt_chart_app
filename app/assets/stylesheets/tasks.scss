@@ -16,7 +16,13 @@ body, html {
 .gantt-chart {
   overflow: auto;
   width: 100%;
-  margin-bottom: 800px;
+  margin-bottom: 1000px;
+  overflow-y: auto;
+}
+
+
+.wrapper {
+    top: 0;
 }
 
 .prev-month a {
