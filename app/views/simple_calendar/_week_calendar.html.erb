@@ -9,22 +9,19 @@
     <% end %>
     <%= link_to t('simple_calendar.next', default: '＞＞'), next_month_tasks_path(start_date: @start_date) %>
   </div>
-<div class="gantt-chart">
-<table class="gantt-chart" style="table-layout: fixed;">
-<div class="thead-header">
-    <thead>
-    <tr>
-      <th class="item-column">項目</th>
-        <% (0..30).each do |wday| %>
+    <div class="gantt-chart">
+    <table class="gantt-chart" style="table-layout: fixed;">
+      <thead>
+        <tr>
+          <th class="item-column">項目</th>
+          <% (0..30).each do |wday| %>
             <% day = @start_date + wday.days %>
             <th class="<%= 'today' if day == Date.today %>">
               <%= day.day %><br><%= l(day, format: "%a", locale: :ja) %>
             </th>
-        <% end %>
-    </tr>
-</thead>
-</div>
-
+          <% end %>
+        </tr>
+      </thead>
      <tbody>
         <% @tasks.each_with_index do |task, index| %>
           <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
