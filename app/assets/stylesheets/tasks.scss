@@ -18,11 +18,22 @@ body, html {
   width: 100%;
   margin-bottom: 1000px;
   overflow-y: auto;
+  
 }
 
-
+.wrapper,
+.calendar-heading,
+.thead-header {
+    position: sticky;
+    z-index: 100; /* z-indexを使用して、他のコンテンツよりも前面に表示されるようにします */
+}
 .wrapper {
     top: 0;
+}
+
+.thead-header {
+  top: 0;
+  background-color: white; 
 }
 
 .prev-month a {
@@ -72,6 +83,10 @@ body, html {
   text-align: center;
   margin-top: 10px;
   font-size: 20px;
+  position: sticky;
+  top: 90px;
+  z-index: 100;
+  background-color: white; 
 }
 
 .wrapper {
