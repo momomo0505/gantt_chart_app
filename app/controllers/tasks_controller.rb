@@ -3,7 +3,7 @@ class TasksController < ApplicationController
     @view = params[:view] || 'week'
     @start_date = params[:start_date] ? Date.parse(params[:start_date]).beginning_of_month : Date.today.beginning_of_month
     @end_date = (@start_date + 1.month).end_of_month # 次の月の最終日
-    @tasks = Task.where("start_date <= ? AND end_date >= ?", @end_date, @start_date).order(:created_at)
+    @tasks = Task.where("start_date <= ? AND end_date >= ?", @end_date, @start_date).order(:start_date)
     @tasks_by_date = Hash.new { |hash, key| hash[key] = [] }
   
     @tasks.each do |task|
