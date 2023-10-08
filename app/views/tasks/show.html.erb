@@ -1,10 +1,22 @@
-<h2><%= @task.name %></h2>
-<%= link_to '戻る', tasks_path %>
+<div class="wrapper">
+  <div class="head">
+    <div class="head_title">
+      <%= @task.name %>
+    </div>
+<div class="head_rl">
+<div class="head_left">
+<%= link_to '戻る', root_path, class: 'link' %>
+</div>
+<div class="head_right">
+</div>
+</div>
+</div>
+</div>
+
+
+<%= link_to '編集', edit_task_path(@task), class: 'link2 btn-edit' %> 
+<%= link_to '削除', task_path(@task), method: :delete, data: { confirm: 'タスクを削除してよろしいですか？' }, class: 'link2 btn-delete' %>
 
 <p>開始日: <%= @task.start_date %></p>
 <p>終了日: <%= @task.end_date %></p>
 <p>メモ: <%= @task.memo %></p>
-
-<%= link_to '編集', edit_task_path(@task), class: 'link2' %> |
-<%= link_to '削除', "#", method: :delete, class: 'link2' %> |
-
