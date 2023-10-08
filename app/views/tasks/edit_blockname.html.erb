@@ -1,6 +1,19 @@
-<%= link_to '戻る', root_path, class: '' %>
+<div class="wrapper">
+  <div class="head">
+    <div class="head_title">
+      <%= @task.name %>
+    </div>
+<div class="head_rl">
+<div class="head_left">
+<%= link_to '戻る', root_path, class: 'link' %>
+</div>
+<div class="head_right">
+</div>
+</div>
+</div>
+</div>
 
-
+<br>
 <%= form_with(model: @task, url: update_blockname_task_path(@task), local: true, method: :patch) do |form| %>
   <div class="name">
     <%= form.label :blockname, "ブロック名1(最大50文字)" %>

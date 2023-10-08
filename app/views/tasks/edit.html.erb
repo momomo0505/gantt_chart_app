@@ -1,5 +1,17 @@
-<h2>予定の編集</h2>
-<%= link_to '戻る', tasks_path, class: 'link' %>
+<div class="wrapper">
+<div class="head">
+<%= link_to '予定の編集', new_task_path, class: 'head_title' %>
+<div class="head_rl">
+<div class="head_left">
+<%= link_to '戻る', root_path, class: 'link' %>
+</div>
+<div class="head_right">
+</div>
+</div>
+</div>
+</div>
+
+
 
 <% if @task.errors.any? %>
   <div id="error_explanation">
