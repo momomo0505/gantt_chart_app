@@ -89,7 +89,7 @@ thead th {
 .calendar-heading {
   text-align: center;
   font-size: 20px;
-  position: sticky;
+  //position: sticky;
   //top: 100px;
   z-index: 3; 
   background-color: white; 
@@ -189,7 +189,7 @@ thead th {
 }
 
 .forms {
-  width: 80%; /* ビューポートの幅に対する相対的なサイズ */
+  width: 100%; /* ビューポートの幅に対する相対的なサイズ */
   font-size: 1.0em; /* フォントサイズの拡大 */
 }
 
@@ -225,7 +225,8 @@ thead th {
 }
 
 .field_with_errors {
-  width: 80%;
+  width: 100%;
+  
 }
 
 .blockname {
@@ -257,6 +258,38 @@ thead th {
 
 .block-link:hover {
   background-color: rgba(156, 156, 255, 0.9); /* ホバー時の背景色を濃くする */
+}
+
+#error_explanation {
+  padding: 10px;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
+  margin-bottom: 20px; /* 余白の調整を行い、フォームとの間のスペースを確保します */
+  color: #a94442;
+}
+
+#error_explanation h2 {
+  font-size: 16px;
+  margin-top: 0; /* 上部の余白をなくす */
+}
+
+#error_explanation ul {
+  margin-bottom: 0; /* 下部の余白をなくす */
+  padding-left: 20px; /* リストのパディングを調整 */
+}
+
+#error_explanation ul li {
+  list-style-type: disc; /* リストのスタイルをディスクにする */
+}
+
+.field_with_errors input,
+.field_with_errors select,
+.field_with_errors textarea {
+    box-shadow: none; /* シャドウを削除 */
+    border: 1px solid #f00; /* 赤色の境界線を適用 */
+    margin: 0; /* マージンを0に設定 */
+    
 }
 
    /* スマホ表示時 */

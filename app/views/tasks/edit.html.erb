@@ -1,30 +1,25 @@
 <div class="wrapper">
-<div class="head">
-<%= link_to '予定の編集', new_task_path, class: 'head_title' %>
-<div class="head_rl">
-<div class="head_left">
-<%= link_to '戻る', root_path, class: 'link' %>
+  <div class="head">
+    <%= link_to '予定の編集', new_task_path, class: 'head_title' %>
+    <div class="head_rl">
+      <div class="head_left">
+        <%= link_to '戻る', root_path, class: 'link' %>
+      </div>
+      <div class="head_right">
+      </div>
+    </div>
+  </div>
 </div>
-<div class="head_right">
-</div>
-</div>
-</div>
-</div>
-
-
 
 <% if @task.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@task.errors.count, "エラー") %> が発生しました</h2>
-
     <ul>
-    <% @task.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
     </ul>
   </div>
 <% end %>
 
 <%= render 'form', task: @task %>
-
-
