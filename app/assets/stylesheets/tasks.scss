@@ -70,8 +70,9 @@ thead th {
   text-overflow: ellipsis; 
   color: #202020;
   text-decoration: none;
-  min-height: 30px;
-  max-height: 30px;
+  min-height: 24px;
+  max-height: 24px;
+  line-height: 12px; // 1行の高さを15pxに設定
   white-space: normal; //7文字以上の場合は改行（helperメソッドあり）
 }
 
@@ -226,7 +227,7 @@ thead th {
   text-decoration: none;
   color: #202020;
   padding: 0 2px;
-  line-height: 1; 
+  line-height: 12px; // ブロックの高さと同じに設定
 }
 
 .block-link:hover {
