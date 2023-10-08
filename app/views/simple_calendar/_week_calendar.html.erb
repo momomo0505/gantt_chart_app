@@ -15,11 +15,11 @@
         <tr>
           <th class="item-column">項目</th>
           <% (0..30).each do |wday| %>
-            <% day = @start_date + wday.days %>
-            <th class="<%= 'today' if day == Date.today %>">
-              <%= day.day %><br><%= l(day, format: "%a", locale: :ja) %>
-            </th>
-          <% end %>
+  <% day = @start_date + wday.days %>
+  <th class="<%= 'today' if day == Date.today %> <%= 'weekend' if day.saturday? || day.sunday? %>">
+    <%= day.day %><br><%= l(day, format: "%a", locale: :ja) %>
+  </th>
+<% end %>
         </tr>
       </thead>
      <tbody>
