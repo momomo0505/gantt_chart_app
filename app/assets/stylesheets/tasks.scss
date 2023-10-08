@@ -20,11 +20,11 @@ body, html {
   margin-bottom: 1000px;
 }
 
-.wrapper,
-.calendar-heading {
-    position: sticky;
-    z-index: 100; /* z-indexを使用して、他のコンテンツよりも前面に表示されるようにします */
-}
+//.wrapper,
+//.calendar-heading {
+//   position: sticky;
+//    z-index: 100; /* z-indexを使用して、他のコンテンツよりも前面に表示されるようにします */
+//}
 
 thead th {
   position: sticky ;
