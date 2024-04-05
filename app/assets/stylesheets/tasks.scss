@@ -251,8 +251,8 @@ thead th {
   width: 100%;
   height: 12px;  /* 高さを自動に設定 */
   min-height: 5px; /* 高さの最小値を設定（調整が必要な場合は適宜変更） */
-  background-color: rgba(139, 141, 255, 0.54); /* 背景色を少し透明に設定 */
-  font-size: 5px;
+  background-color: rgba(101, 101, 101, 0.336); /* 背景色を少し透明に設定 */
+  font-size: 10px;
   text-decoration: none;
   color: #202020;
   padding: 0 2px;
@@ -378,7 +378,6 @@ thead th {
 
    .block-link {
    font-size: 7px;
-   background-color: #a5a5a5;
    }
  
   }
