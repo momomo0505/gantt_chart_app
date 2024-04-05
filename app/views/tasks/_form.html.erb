@@ -20,7 +20,18 @@
   <%= form.label :メモ %>
   <%= form.text_field :memo, class: "memo-field" %>
 </div>
+<div class="field">
+  <%= form.label :color, "色" %>
+  <%= form.select :color, options_for_select([
+    ['灰', '#a5a5a5'],
+    ['青', '#c0acff'],
+    ['赤', '#ffacac'],
+    ['黄', '#edff86'],
+    ['オレンジ', '#ff7950'],
+    ['紫', '#b249b9'],
 
+  ], @task.color), {}, { class: "color-select" } %>
+</div>
 <br>
 
   <div class="submit">

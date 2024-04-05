@@ -76,7 +76,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :start_date, :end_date, :memo)
+    params.require(:task).permit(:name, :start_date, :end_date, :memo, :color)
   end
 
   def blockname_params

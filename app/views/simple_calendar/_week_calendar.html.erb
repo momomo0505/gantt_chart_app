@@ -26,22 +26,26 @@
       </thead>
      <tbody>
         <% @tasks.each_with_index do |task, index| %>
-          <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
-            <td class="sticky-cell">
-             <%= link_to truncate_name(task.name), task_path(task), class: "taskname" %> <!-- ここでtasknameをリンクとして表示 -->
-            </td>
-            <% (0..30).each do |wday| %>
-  <td class="<%= 'task' if task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'custom-td' unless task.start_date <= (@start_date + wday.days) && task.end_date >= (@start_date + wday.days) %> <%= 'three-blocknames' if [task.blockname, task.blockname2, task.blockname3].compact.size == 3 %>">
-    <% day = @start_date + wday.days %>
-    <% if task.start_date == day %>
-        <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> 
-        <%= link_to task.blockname2 || '', edit_blockname_task_path(task), class: "block-link" %>
-        <%= link_to task.blockname3 || '', edit_blockname_task_path(task), class: "block-link" %>
-    <% end %>
-</td>
-<% end %>
-          </tr>
+  <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
+    <td class="sticky-cell">
+      <%= link_to truncate_name(task.name), task_path(task), class: "taskname" %>
+    </td>
+    <% (0..30).each do |wday| %>
+      <% day = @start_date + wday.days %>
+      <% task_active = task.start_date <= day && task.end_date >= day %>
+      <% cell_class = task_active ? 'task' : 'custom-td' %>
+      <% is_first_of_month = day == day.beginning_of_month %>
+      <% should_display_block_info = task.start_date == day || (is_first_of_month && task.start_date < day && task.end_date >= day) %>
+      <td class="<%= cell_class %>" style="<%= 'background-color:' + task.color if task_active && task.color.present? %>">
+        <% if should_display_block_info %>
+          <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> 
+          <%= link_to task.blockname2 || '', edit_blockname_task_path(task), class: "block-link" %>
+          <%= link_to task.blockname3 || '', edit_blockname_task_path(task), class: "block-link" %>
         <% end %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
       </tbody>
     </table>
   </div>

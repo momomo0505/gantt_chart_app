@@ -169,11 +169,11 @@ thead th {
 }
 
 .weekend {
-  background-color: #ffe5e5;
+  background-color: #ffcfcf;
 }
 
 .task {
-  background-color: rgb(189, 189, 255); 
+  background-color: rgba(139, 139, 139, 0.254); 
 }
 
 .custom-td {
@@ -235,6 +235,9 @@ thead th {
   text-overflow: ellipsis;
 }
 
+
+
+
 .taskname.blockname {
   display: inline-block;
   background-color: rgb(100, 100, 255); /* 青色の背景を直接リンクに適用 */
@@ -248,7 +251,7 @@ thead th {
   width: 100%;
   height: 12px;  /* 高さを自動に設定 */
   min-height: 5px; /* 高さの最小値を設定（調整が必要な場合は適宜変更） */
-  background-color: rgba(156, 156, 255, 0.7); /* 背景色を少し透明に設定 */
+  background-color: rgba(139, 141, 255, 0.54); /* 背景色を少し透明に設定 */
   font-size: 5px;
   text-decoration: none;
   color: #202020;
@@ -257,7 +260,7 @@ thead th {
 }
 
 .block-link:hover {
-  background-color: rgba(156, 156, 255, 0.9); /* ホバー時の背景色を濃くする */
+  background-color: rgba(83, 83, 255, 0.9); /* ホバー時の背景色を濃くする */
 }
 
 #error_explanation {
@@ -375,6 +378,7 @@ thead th {
 
    .block-link {
    font-size: 7px;
+   background-color: #a5a5a5;
    }
  
   }
