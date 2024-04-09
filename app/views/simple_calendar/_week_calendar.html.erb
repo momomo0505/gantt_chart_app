@@ -1,51 +1,49 @@
 <div class="main">
   <div class="calendar-heading">
-
     <%= link_to t('simple_calendar.previous', default: '＜＜'), previous_month_tasks_path(start_date: @start_date) %>
     <% if calendar.number_of_weeks == 1 %>
-      <span class="calendar-title"><%= start_date.year %>年  <%= t('date.month_names')[start_date.month] %></span>
+      <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span>
     <% else %>
       <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
     <% end %>
     <%= link_to t('simple_calendar.next', default: '＞＞'), next_month_tasks_path(start_date: @start_date) %>
   </div>
-    <div class="gantt-chart">
+  <div class="gantt-chart">
     <table class="gantt-chart" style="table-layout: fixed;">
       <thead>
         <tr>
           <th class="item-column">項目</th>
           <% (0..30).each do |wday| %>
-  <% day = @start_date + wday.days %>
-  <% is_holiday = Holidays.on(day, :jp).present? %>
-  <th class="<%= 'today' if day == Date.today %> <%= 'weekend' if day.saturday? || day.sunday? || is_holiday %>">
-    <%= day.day %><br><%= l(day, format: "%a", locale: :ja) %>
-  </th>
-<% end %>
-
+            <% day = @start_date + wday.days %>
+            <% is_holiday = Holidays.on(day, :jp).present? %>
+            <th class="<%= 'today' if day == Date.today %> <%= 'weekend' if day.saturday? || day.sunday? || is_holiday %>">
+              <%= day.day %><br><%= l(day, format: "%a", locale: :ja) %>
+            </th>
+          <% end %>
         </tr>
       </thead>
-     <tbody>
+      <tbody>
         <% @tasks.each_with_index do |task, index| %>
-  <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
-    <td class="sticky-cell">
-      <%= link_to truncate_name(task.name), task_path(task), class: "taskname" %>
-    </td>
-    <% (0..30).each do |wday| %>
-      <% day = @start_date + wday.days %>
-      <% task_active = task.start_date <= day && task.end_date >= day %>
-      <% cell_class = task_active ? 'task' : 'custom-td' %>
-      <% is_first_of_month = day == day.beginning_of_month %>
-      <% should_display_block_info = task.start_date == day || (is_first_of_month && task.start_date < day && task.end_date >= day) %>
-      <td class="<%= cell_class %>" style="<%= 'background-color:' + task.color if task_active && task.color.present? %>">
-        <% if should_display_block_info %>
-          <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> 
-          <%= link_to task.blockname2 || '', edit_blockname_task_path(task), class: "block-link" %>
-          <%= link_to task.blockname3 || '', edit_blockname_task_path(task), class: "block-link" %>
+          <tr class="<%= index.even? ? 'even-row' : 'odd-row' %>">
+            <td class="sticky-cell">
+              <%= link_to truncate_name(task.name), task_path(task), class: "taskname" %>
+            </td>
+            <% (0..30).each do |wday| %>
+              <% day = @start_date + wday.days %>
+              <% task_active = task.start_date <= day && task.end_date >= day %>
+              <% cell_class = task_active ? 'task' : 'custom-td' %>
+              <% is_first_of_month = day == day.beginning_of_month %>
+              <% should_display_block_info = task.start_date == day || (is_first_of_month && task.start_date < day && task.end_date >= day && day.month == @start_date.month) %>
+              <td class="<%= cell_class %>" style="<%= 'background-color:' + task.color if task_active && task.color.present? %>">
+                <% if should_display_block_info %>
+                  <%= link_to task.blockname || '', edit_blockname_task_path(task), class: "block-link" %> 
+                  <%= link_to task.blockname2 || '', edit_blockname_task_path(task), class: "block-link" %>
+                  <%= link_to task.blockname3 || '', edit_blockname_task_path(task), class: "block-link" %>
+                <% end %>
+              </td>
+            <% end %>
+          </tr>
         <% end %>
-      </td>
-    <% end %>
-  </tr>
-<% end %>
       </tbody>
     </table>
   </div>
