@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn install:*)",
+      "Bash(rm:*)",
+      "Bash(rails s)",
+      "Bash(bundle exec rails s:*)",
+      "Bash(gem install:*)",
+      "Bash(ruby -v:*)",
+      "Bash(bundle install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
